@@ -5,17 +5,24 @@
         <span class="navbar-toggler-icon"></span>
         </button>
     </div>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
         <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="/phpexemplo">Home</a>
+            <a class="nav-link text-light" href="">Gêneros</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/phpexemplo/Views/pessoa.index.php">Pessoa</a>
+            <a class="nav-link text-light" href="">Artistas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/phpexemplo/Views/projeto.index.php">Projeto</a>
+            <a class="nav-link text-light" href="">Álbuns</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" href="">Músicas</a>
         </li>
         </ul>
     </div>  
+    <div>
+    <button type="button" class="btn btn-light btn-lg" data-mdb-ripple-color="dark" id="botao">Fazer confissão</button>
+    </div>
+    
 </nav>
