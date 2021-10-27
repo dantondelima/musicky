@@ -1,5 +1,5 @@
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <p>Autor: Paulo R T Cândido</p>
+  <p>Autor: Dan e sthe</p>
 </div>
 </body>
 </html>
