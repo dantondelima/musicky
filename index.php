@@ -1,4 +1,4 @@
-<?php include 'Views/cabecalho.php'; ?>
+<?php include 'Views/master.php'; ?>
 
 <!-- O grid deve ser incluído em container. -->
 <div class="container" style="margin-top:30px">
@@ -23,7 +23,7 @@
       <p>Para clonar o projeto utilize:</p>
       <p>git clone https://github.com/prtcandido/phpexemplo.git</p>
     </div>
-  </div>
+  </div> 
 
 </div>
 
