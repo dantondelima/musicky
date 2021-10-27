@@ -24,8 +24,9 @@
           <div class="card my-5" style="width: 18rem;">
             <div class="card-body">
                   <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
+                  Título
+                  <br>
+                  Confissão
                   </p>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img"  alt="..."/>      
@@ -35,8 +36,9 @@
           <div class="card my-5" style="width: 18rem;">
             <div class="card-body">
                   <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
+                  Título
+                  <br>
+                  Confissão
                   </p>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
@@ -46,8 +48,9 @@
           <div class="card my-5" style="width: 18rem;">
             <div class="card-body">
                   <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
+                  Título
+                  <br>
+                  Confissão
                   </p>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
@@ -59,8 +62,9 @@
           <div class="card my-4" style="width: 18rem;">
             <div class="card-body">
                   <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
+                  Título
+                  <br>
+                  Confissão
                   </p>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
@@ -70,8 +74,9 @@
           <div class="card my-4" style="width: 18rem;">
             <div class="card-body">
                   <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
+                  Título
+                  <br>
+                  Confissão
                   </p>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
@@ -81,8 +86,9 @@
           <div class="card my-4" style="width: 18rem;">
             <div class="card-body">
                   <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.
+                  Título
+                  <br>
+                  Confissão
                   </p>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      

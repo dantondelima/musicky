@@ -1,4 +1,5 @@
-<?php include 'cabecalho.php'; ?>
+
+<?php include 'nav.php'; ?>
 
 <h3>Criar Pessoa</h3>
 <div class=container>

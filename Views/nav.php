@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
         <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link text-light" href="">Gêneros</a>
+            <a class="nav-link text-light" href="Views\lista-generos.php">Gêneros</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-light" href="">Artistas</a>
@@ -22,7 +22,7 @@
         </ul>
     </div>  
     <div>
-    <button type="button" class="btn btn-light btn-lg" data-mdb-ripple-color="dark" id="botao">Fazer confissão</button>
+    <button type="button" class="btn btn-light btn-lg" data-mdb-ripple-color="dark" id="botao" href="">Fazer confissão</button>
     </div>
     
 </nav>
