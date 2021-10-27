@@ -1,6 +1,6 @@
 ﻿<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="titulo">
-        <a class="navbar-brand" href="#">Miusgui</a>
+        <a class="navbar-brand" href="#">musicky</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
         </button>
