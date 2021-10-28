@@ -9,9 +9,9 @@
       crossorigin="anonymous"
     ></script>
     <title>Musicky</title>
-    <?php include 'Views/cabecalho.php'; ?>
+    <?php include 'cabecalho.php'; ?>
 </head>
 <body>
-    <?php include 'Views/nav.php'; ?>
+    <?php include 'nav.php'; ?>
 </body>
 </html>

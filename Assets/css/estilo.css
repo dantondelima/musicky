@@ -13,15 +13,21 @@ src: URL('../LillyBelle.ttf') format('truetype');
 .navbar-nav {
     font-size: 18px;
 }
-#botao {
-    border-radius: 50px;
-    font-size: 18px;
+.btn-radius {
+    border-radius: 100px !important;
+    font-size: 18px !important;
 }
 
+.btn-shadow:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 img {
     width: 120px;
 }
 
+.breadcrumb {
+    background-color: none;
+}
 #rodape{
     position: static;
     bottom: 0 !important;
@@ -43,4 +49,43 @@ img {
 
 .card-text {
     text-align: center;
+}
+
+.row-align{
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.categorias {
+    margin-top: 14px;
+}
+
+.btn-form {
+    width: 7rem;
+    margin-bottom: 9.7rem;
+}
+
+.btn-form-2 {
+    width: 7rem;
+    margin-bottom: 2rem;
+}
+
+.btn-cores {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.conjunto-cores {
+    margin-top: 1rem;
+}
+
+.escolha-cor {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.border-dark {
+    border-width: 3px;
 }
