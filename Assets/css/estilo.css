@@ -71,6 +71,10 @@ img {
     margin-bottom: 2rem;
 }
 
+.btn-form-3 {
+    width: 7rem;
+    margin-bottom: 3.9rem;
+}
 .btn-cores {
     width: 2.5rem;
     height: 2.5rem;
@@ -88,4 +92,17 @@ img {
 
 .border-dark {
     border-width: 3px;
+}
+
+.card.artista {
+    width: 20rem;
+}
+
+.btn-artista {
+    width: 8rem;
+}
+
+.img-artista {
+    width: 300px;
+    height: 400px;
 }

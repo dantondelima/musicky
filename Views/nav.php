@@ -11,7 +11,7 @@
             <a class="nav-link text-light" href="Views\subpaginas\lista.generos.php">Gêneros</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" href="">Artistas</a>
+            <a class="nav-link text-light" href="Views\subpaginas\lista.artistas.php">Artistas</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-light" href="">Álbuns</a>
