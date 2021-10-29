@@ -1,108 +1,116 @@
 ﻿@font-face {
-font-family: 'LillyBelle';
-src: URL('../LillyBelle.ttf') format('truetype');
+  font-family: "LillyBelle";
+  src: URL("../LillyBelle.ttf") format("truetype");
 }
 .titulo {
-    font-family: LillyBelle;
+  font-family: LillyBelle;
 }
 
+.navbar {
+  margin-top: -1.5rem;
+}
 .navbar-brand {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 .navbar-nav {
-    font-size: 18px;
+  font-size: 18px;
 }
 .btn-radius {
-    border-radius: 100px !important;
-    font-size: 18px !important;
+  border-radius: 100px !important;
+  font-size: 18px !important;
 }
 
 .btn-shadow:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 img {
-    width: 120px;
+  width: 120px;
 }
 
 .breadcrumb {
-    background-color: none;
+  background-color: none;
 }
-#rodape{
-    position: static;
-    bottom: 0 !important;
+#rodape {
+  position: static;
+  bottom: 0 !important;
 }
 
+#text-rodape {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
 .card {
-    border-color: black;
-    border-radius: 10%;
-    border-width: 3px;
+  border-color: black;
+  border-radius: 10%;
+  border-width: 3px;
 }
 .card-img {
-    width: 200px;
-    height: 45px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1rem;
+  width: 200px;
+  height: 45px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
 }
 
 .card-text {
-    text-align: center;
+  text-align: center;
 }
 
-.row-align{
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
+.row-align {
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
 }
 
 .categorias {
-    margin-top: 14px;
+  margin-top: 14px;
 }
 
 .btn-form {
-    width: 7rem;
-    margin-bottom: 9.7rem;
+  width: 7rem;
+  margin-bottom: 9.7rem;
 }
 
 .btn-form-2 {
-    width: 7rem;
-    margin-bottom: 2rem;
+  width: 7rem;
+  margin-bottom: 2rem;
 }
 
 .btn-form-3 {
-    width: 7rem;
-    margin-bottom: 3.9rem;
+  width: 7rem;
+  margin-bottom: 3.9rem;
 }
 .btn-cores {
-    width: 2.5rem;
-    height: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .conjunto-cores {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .escolha-cor {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .border-dark {
-    border-width: 3px;
+  border-width: 3px;
 }
 
 .card.artista {
-    width: 20rem;
+  width: 20rem;
 }
 
 .btn-artista {
-    width: 8rem;
+  width: 8rem;
 }
 
 .img-artista {
-    width: 300px;
-    height: 400px;
+  width: 300px;
+  height: 400px;
 }

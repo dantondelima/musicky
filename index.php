@@ -30,36 +30,36 @@
       </div>
       <div class="row">
         <div class="col-md-4 mx-0 px-5">
-          <div class="card my-5" style="width: 18rem;">
+        <div class="card my-5" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
                   <br>
-                  Confissão
+                  Música/álbum
                   </p>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img"  alt="..."/>      
           </div>
         </div>
         <div class="col-md-4 mx-0 px-5">
-          <div class="card my-5" style="width: 18rem;">
+          <div class="card my-5" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
                   <br>
-                  Confissão
+                  Música/álbum
                   </p>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
           </div>
         </div>
         <div class="col-md-4 mx-0 px-5">
-          <div class="card my-5" style="width: 18rem;">
+        <div class="card my-5" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
                   <br>
-                  Confissão
+                  Música/álbum
                   </p>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
@@ -68,36 +68,36 @@
       </div>
       <div class="row">
         <div class="col-md-4 mx-0 px-5">
-          <div class="card my-4" style="width: 18rem;">
+        <div class="card my-5" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
                   <br>
-                  Confissão
+                  Música/álbum
                   </p>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
           </div>
         </div>
         <div class="col-md-4 mx-0 px-5">
-          <div class="card my-4" style="width: 18rem;">
+        <div class="card my-5" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
                   <br>
-                  Confissão
+                  Música/álbum
                   </p>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
           </div>
         </div>
         <div class="col-md-4 mx-0 px-5">
-          <div class="card my-4" style="width: 18rem;">
+        <div class="card my-5" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
                   <br>
-                  Confissão
+                  Música/álbum
                   </p>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      

@@ -6,7 +6,7 @@
   <div class="col-md-10 mx-auto">
     <div class="row">
         <div class="col">
-          <img src="Assets\Imagens\logo.png" class="rounded mx-auto d-block" alt="...">
+          <img src="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Assets/Imagens/logo.png"; ?>" class="rounded mx-auto d-block" alt="...">
         </div>
     </div>
     <div class="row my-3">
@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-11 mx-0 px-0">
           <div class="float-right">
-            <button class="btn btn-dark btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark" href="Views\subpaginas\cadastro.generos.php">Cadastrar artista</button>
+            <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/cadastro.artistas.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark">Cadastrar artista</button></a>
           </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text">Artista 1</h5>
-              <a href="#!" class="btn btn-warning btn-artista my-3 mx-1">Editar</a>
+              <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.artistas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-1">Editar</a>
               <a href="#!" class="btn btn-danger btn-artista my-3 mx-1">Excluir</a>
             </div>
         </div>  

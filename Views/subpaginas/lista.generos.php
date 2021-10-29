@@ -6,7 +6,7 @@
   <div class="col-md-10 mx-auto">
     <div class="row">
         <div class="col">
-          <img src="Assets\Imagens\logo.png" class="rounded mx-auto d-block" alt="...">
+          <img src="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Assets/Imagens/logo.png"; ?>" class="rounded mx-auto d-block" alt="...">
         </div>
     </div>
     <div class="row my-3">
@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-11 mx-0 px-0">
           <div class="float-right">
-            <button class="btn btn-dark btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark" href="Views\subpaginas\cadastro.generos.php">Cadastrar gênero</button>
+            <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/cadastro.generos.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark">Cadastrar gênero</button></a>
           </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
           <li class="list-group-item">
             Gênero 1
             <button class='btn btn-danger float-right mx-1' href="">Excluir</button>
-            <button class='btn btn-warning float-right mx-1' href="">Editar</button>
+            <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.generos.php"; ?>"><button class='btn btn-warning float-right mx-1'>Editar</button></a>
           </li>
           <li class="list-group-item">
             Gênero 2

@@ -1,6 +1,6 @@
 ﻿<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="titulo">
-        <a class="navbar-brand" href="">musicky</a>
+        <a class="navbar-brand" href="/musicky">musicky</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -8,21 +8,21 @@
     <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
         <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link text-light" href="Views\subpaginas\lista.generos.php">Gêneros</a>
+            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.generos.php"; ?>">Gêneros</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" href="Views\subpaginas\lista.artistas.php">Artistas</a>
+            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.artistas.php"; ?>">Artistas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" href="">Álbuns</a>
+            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/"; ?>">Álbuns</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" href="">Músicas</a>
+            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/"; ?>">Músicas</a>
         </li>
         </ul>
     </div>  
     <div>
-    <button class="btn btn-light btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark" href="">Fazer confissão</button>
+    <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/cadastro.confissao.php"; ?>"><button class="btn btn-light btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark">Fazer confissão</button></a>
     </div>
     
 </nav>

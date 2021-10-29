@@ -6,7 +6,7 @@
   <div class="col-md-10 mx-auto">
     <div class="row">
         <div class="col">
-          <img src="Assets\Imagens\logo.png" class="rounded mx-auto d-block" alt="...">
+         <img src="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Assets/Imagens/logo.png"; ?>" class="rounded mx-auto d-block" alt="...">
         </div>
     </div>
     <div class="row my-3">
@@ -69,7 +69,7 @@
     </div>
     <div class= "row my-1">
         <button class="btn btn-success btn-lg btn-radius btn-shadow btn-form-2" data-mdb-ripple-color="dark" href="">Enviar</button>
-        <button class="btn btn-dark btn-lg btn-radius btn-shadow btn-form-2 mx-3" data-mdb-ripple-color="dark" href="">Voltar</button>  
+        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow btn-form-2 mx-3" data-mdb-ripple-color="dark">Voltar</button></a> 
     </div>  
   </div>
 </div>
