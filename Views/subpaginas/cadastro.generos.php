@@ -13,8 +13,8 @@
       <div class="col mx-0 px-0">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Gêneros</a></li>
+            <li class="breadcrumb-item"><a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky"; ?>">Home</a></li>
+            <li class="breadcrumb-item"><a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.generos.php"; ?>">Gêneros</a></li>
             <li class="breadcrumb-item active" aria-current="page">Cadastro</li>
           </ol>
         </nav>

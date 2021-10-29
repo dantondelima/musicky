@@ -13,7 +13,7 @@
       <div class="col mx-0 px-0">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Página Inicial</li>
+            <li class="breadcrumb-item active" aria-current="page">Home</li>
           </ol>
         </nav>
       </div>
@@ -30,78 +30,96 @@
       </div>
       <div class="row">
         <div class="col-md-4 mx-0 px-5">
-        <div class="card my-5" style="width: 18rem; height:18rem;">
+        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/visualizao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
                   <br>
                   Música/álbum
                   </p>
+                  <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/e/ea/5_Seconds_of_Summer_Youngblood.png" alt="" class="img-card-middle img-thumbnail border-thumb">
+                  </div>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img"  alt="..."/>      
-          </div>
+          </div></a>
         </div>
         <div class="col-md-4 mx-0 px-5">
-          <div class="card my-5" style="width: 18rem; height:18rem;">
+        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/visualizao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
                   <br>
                   Música/álbum
                   </p>
+                  <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/e/ea/5_Seconds_of_Summer_Youngblood.png" alt="" class="img-card-middle img-thumbnail border-thumb">
+                  </div>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
-          </div>
+          </div></a>
         </div>
         <div class="col-md-4 mx-0 px-5">
-        <div class="card my-5" style="width: 18rem; height:18rem;">
+        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/visualizao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
                   <br>
                   Música/álbum
                   </p>
+                  <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/e/ea/5_Seconds_of_Summer_Youngblood.png" alt="" class="img-card-middle img-thumbnail border-thumb">
+                  </div>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
-          </div>
+          </div></a>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 mx-0 px-5">
-        <div class="card my-5" style="width: 18rem; height:18rem;">
+        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/visualizao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
                   <br>
                   Música/álbum
                   </p>
+                  <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/e/ea/5_Seconds_of_Summer_Youngblood.png" alt="" class="img-card-middle img-thumbnail border-thumb">
+                  </div>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
-          </div>
+          </div></a>
         </div>
         <div class="col-md-4 mx-0 px-5">
-        <div class="card my-5" style="width: 18rem; height:18rem;">
+        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/visualizao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
                   <br>
                   Música/álbum
                   </p>
+                  <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/e/ea/5_Seconds_of_Summer_Youngblood.png" alt="" class="img-card-middle img-thumbnail border-thumb">
+                  </div>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
-          </div>
+          </div></a>
         </div>
         <div class="col-md-4 mx-0 px-5">
-        <div class="card my-5" style="width: 18rem; height:18rem;">
+        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/visualizao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
                   <br>
                   Música/álbum
                   </p>
+                  <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/e/ea/5_Seconds_of_Summer_Youngblood.png" alt="" class="img-card-middle img-thumbnail border-thumb">
+                  </div>
             </div>
             <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
-          </div>
+          </div></a>
         </div>
       </div>
     </div>

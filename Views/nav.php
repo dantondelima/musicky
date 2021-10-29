@@ -14,10 +14,10 @@
             <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.artistas.php"; ?>">Artistas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/"; ?>">Álbuns</a>
+            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.albuns.php"; ?>">Álbuns</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/"; ?>">Músicas</a>
+            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.musicas.php"; ?>">Músicas</a>
         </li>
         </ul>
     </div>  
