@@ -46,8 +46,10 @@
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text">Álbum 1</h5>
-              <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-              <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+              <div class="row justify-content-center">
+                <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+                <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+              </div>
             </div>
         </div>  
       </div>
