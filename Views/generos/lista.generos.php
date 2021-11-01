@@ -1,5 +1,13 @@
 <?php include '../master.php'; ?>
 
+<?php
+spl_autoload_register(function ($class_name) {
+    include '..\..\\'.$class_name . '.php';
+});
+use Db\Persiste;
+use Models\Genero;
+$generos = Persiste::GetAll('Models\Genero');
+?>
 <!-- O grid deve ser incluído em container. -->
 <div class="container-fluid" style="margin-top:20px">
 <div class="row">
@@ -25,7 +33,7 @@
         </div>
         <div class="col-md-11 mx-0 px-0">
           <div class="float-right">
-            <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/cadastro.generos.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark">Cadastrar gênero</button></a>
+            <a href="<?= "cadastro.generos.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark">Cadastrar gênero</button></a>
           </div>
         </div>
     </div>
@@ -43,31 +51,18 @@
     <div class= "row my-4">
       <div class="col mx-0 px-0">
         <ul class="list-group">
+          <?php
+            foreach($generos as $genero){
+              $genero = $genero->toArray()
+          ?>
           <li class="list-group-item">
-            Gênero 1
-            <button class='btn btn-danger float-right mx-1' href="">Excluir</button>
-            <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.generos.php"; ?>"><button class='btn btn-warning float-right mx-1'>Editar</button></a>
+            <?= $genero['nome'] ?>
+            <a href="<?= "delete.generos.php?id=".$genero['id']; ?>"><button class='btn btn-danger float-right mx-1' onclick="return confirm('Deseja excluir o registro?')">Excluir</button></a>
+            <a href="<?= "edicao.generos.php?id=".$genero['id']; ?>"><button class='btn btn-warning float-right mx-1'>Editar</button></a>
           </li>
-          <li class="list-group-item">
-            Gênero 2
-            <button class='btn btn-danger float-right mx-1' href="">Excluir</button>
-            <button class='btn btn-warning float-right mx-1' href="">Editar</button>
-          </li>
-          <li class="list-group-item">
-            Gênero 3
-            <button class='btn btn-danger float-right mx-1' href="">Excluir</button>
-            <button class='btn btn-warning float-right mx-1' href="">Editar</button>
-          </li>
-          <li class="list-group-item">
-            Gênero 4
-            <button class='btn btn-danger float-right mx-1' href="">Excluir</button>
-            <button class='btn btn-warning float-right mx-1' href="">Editar</button>
-          </li>
-          <li class="list-group-item">
-            Gênero 5
-            <button class='btn btn-danger float-right mx-1' href="">Excluir</button>
-            <button class='btn btn-warning float-right mx-1' href="">Editar</button>
-          </li>
+          <?php 
+            }
+          ?>
         </ul>
       </div>
     </div>

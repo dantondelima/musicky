@@ -14,7 +14,7 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky"; ?>">Home</a></li>
-            <li class="breadcrumb-item"><a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.artistas.php"; ?>">Artistas</a></li>
+            <li class="breadcrumb-item"><a href="<?= "lista.musicas.php"; ?>">Músicas</a></li>
             <li class="breadcrumb-item active" aria-current="page">Cadastro</li>
           </ol>
         </nav>
@@ -27,8 +27,17 @@
     </div>
     <div class="row my-3">
       <div class="col-md-12 mx-0 px-0">
+        <div class="form-check">
+         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+           <label class="form-check-label" for="defaultCheck1">Essa música é um single?</label>
+        </div>
+        <br>
         <div class="form">
-          <input type="text" class="form-control" placeholder="Nome do artista">
+          <input type="text" class="form-control" placeholder="Nome da música">
+          <br>
+          <div class="form-group">
+              <input type="text" id="disabledTextInput" class="form-control" placeholder="Nome do álbum">
+          </div>
         </div>
       </div>
     </div>
@@ -36,19 +45,16 @@
       <div class="col-md-12 mx-0 px-0">
         <form>
           <div class="form-group">
-            <label for="exampleFormControlFile1">Escolha uma foto do artista</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            <label for="exampleFormControlFile1">Escolha uma foto do single</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" disabled>
           </div>
         </form>
       </div>
     </div>
     <div class= "row my-2">
         <button class="btn btn-success btn-lg btn-radius btn-shadow btn-form-3" data-mdb-ripple-color="dark" href="">Enviar</button>
-        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.artistas.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow btn-form-3 mx-3" data-mdb-ripple-color="dark">Voltar</button></a>  
-    </div> 
-    <span class="my-5">
-      <br><br><br><br>
-    </span> 
+        <a href="<?= "lista.musicas.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow btn-form-3 mx-3" data-mdb-ripple-color="dark">Voltar</button></a>  
+    </div>  
   </div>
 </div>
 <?php include '../rodape.php'; ?>

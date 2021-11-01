@@ -14,18 +14,18 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky"; ?>">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Artistas</li>
+            <li class="breadcrumb-item active" aria-current="page">Músicas</li>
           </ol>
         </nav>
       </div>
     </div>
     <div class="row my-3 row-align">
         <div class="col-md-1 mx-0 px-0">
-            <h3 class="categorias">Artistas</h3> 
+            <h3 class="categorias">Músicas</h3> 
         </div>
         <div class="col-md-11 mx-0 px-0">
           <div class="float-right">
-            <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/cadastro.artistas.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark">Cadastrar artista</button></a>
+            <a href="<?= "cadastro.musicas.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark">Cadastrar música</button></a>
           </div>
         </div>
     </div>
@@ -45,21 +45,9 @@
         <div class="card-categoria">
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
-              <h5 class="card-text">Artista 1</h5>
+              <h5 class="card-text">Música 1</h5>
               <div class="row justify-content-center">
-                  <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.artistas.php"; ?>" class="btn btn-warning btn-artista my-2 mx-3">Editar</a>
-                  <a href="#!" class="btn btn-danger btn-artista my-2 mx-3">Excluir</a>
-              </div>
-            </div>
-        </div>  
-      </div>
-      <div class="col-md-4 mx-0">
-        <div class="card-categoria">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
-            <div class="card-body">
-              <h5 class="card-text">Artista 2</h5>
-              <div>
-                <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.artistas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+                <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
                 <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
               </div>
             </div>
@@ -69,8 +57,18 @@
         <div class="card-categoria">
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
-              <h5 class="card-text">Artista 3</h5>
-              <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.artistas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+              <h5 class="card-text">Música 2</h5>
+              <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+              <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+            </div>
+        </div>  
+      </div>
+      <div class="col-md-4 mx-0">
+        <div class="card-categoria">
+          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
+            <div class="card-body">
+              <h5 class="card-text">Música 3</h5>
+              <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
               <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
             </div>
         </div>  
@@ -81,8 +79,8 @@
         <div class="card-categoria">
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
-              <h5 class="card-text">Artista 4</h5>
-              <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.artistas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+              <h5 class="card-text">Música 4</h5>
+              <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
               <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
             </div>
         </div>  
@@ -91,8 +89,8 @@
         <div class="card-categoria">
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
-              <h5 class="card-text">Artista 5</h5>
-              <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.artistas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+              <h5 class="card-text">Música 5</h5>
+              <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
               <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
             </div>
         </div>  
@@ -101,8 +99,8 @@
         <div class="card-categoria">
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
-              <h5 class="card-text">Artista 6</h5>
-              <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.artistas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+              <h5 class="card-text">Música 6</h5>
+              <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
               <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
             </div>
         </div>  

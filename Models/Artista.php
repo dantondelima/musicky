@@ -7,12 +7,14 @@ class Artista implements Idados{
     // Propriedades
 	protected $id;
 	protected $nome;
+	protected $foto;
 	// obs.: propriedades protected são acessíveis por subclasses (extend)
 
 	// Método construtor.
-	public function __construct($id, $nome){
-		$this->id= $id;
-		$this->nome= $nome;
+	public function __construct($id, $nome, $foto = null){
+		$this->id = $id;
+		$this->nome = $nome;
+		$this->foto = $foto;
 	}
 
 	// Método obrigatório pois é definido na interface
@@ -28,7 +30,7 @@ class Artista implements Idados{
 
 	// Método que retorna vetor associativo contendo os valores das propriedades
 	public function toArray() {
-		return ['id' => $this->id ,'nome'=>$this->nome];
+		return ['id' => $this->id ,'nome'=>$this->nome, 'foto' => $this->foto];
 	}
 
     // Inclui o conteúdo do Trait

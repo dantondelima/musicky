@@ -14,7 +14,7 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky"; ?>">Home</a></li>
-            <li class="breadcrumb-item"><a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.albuns.php"; ?>">Álbuns</a></li>
+            <li class="breadcrumb-item"><a href="<?= "lista.albuns.php"; ?>">Álbuns</a></li>
             <li class="breadcrumb-item active" aria-current="page">Editar</li>
           </ol>
         </nav>
@@ -40,7 +40,7 @@
         </div>
         <div>
           <button class="btn btn-success btn-lg btn-radius btn-shadow btn-form-2 my-4" data-mdb-ripple-color="dark" href="">Salvar</button>
-            <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.albuns.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow btn-form-2 mx-3 my-4" data-mdb-ripple-color="dark">Voltar</button></a>
+            <a href="<?= "lista.albuns.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow btn-form-2 mx-3 my-4" data-mdb-ripple-color="dark">Voltar</button></a>
         </div>
       </div>
         <div class="col-md-4 mx-0 px-0">

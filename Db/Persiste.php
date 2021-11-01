@@ -244,16 +244,20 @@ class Persiste{
 			// para preparar o comando e executá-lo.
 			$parametros = "";
 			$vetor = [];
+			
 			foreach($rf->getProperties() as $p)
 			{
-				if ($p->name!='id')
+				if ($p->name != 'id' && $obj->{'get'.$p->name})
 				{
 					$parametros = $parametros.$p->name.' = :'.$p->name.',';
+					
 				}
-				$vetor[':'.$p->name]= $obj->{'get'.$p->name};
+				if($obj->{'get'.$p->name} != null){
+					$vetor[':'.$p->name]= $obj->{'get'.$p->name};
+				}
 			}
 			$parametros = substr($parametros,0,-1); // retira última virgula
-
+			
 			// Prepara o comando SQL
 			$stmt = $pdo->prepare("update $tabela set $parametros where id=:id");
 

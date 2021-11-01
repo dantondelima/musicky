@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-11 mx-0 px-0">
           <div class="float-right">
-            <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/cadastro.albuns.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark">Cadastrar álbum</button></a>
+            <a href="<?= "cadastro.albuns.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark">Cadastrar álbum</button></a>
           </div>
         </div>
     </div>
@@ -47,7 +47,7 @@
             <div class="card-body">
               <h5 class="card-text">Álbum 1</h5>
               <div class="row justify-content-center">
-                <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+                <a href="<?= "edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
                 <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
               </div>
             </div>
@@ -58,7 +58,7 @@
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text">Álbum 2</h5>
-              <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+              <a href="<?= "edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
               <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
             </div>
         </div>  
@@ -68,7 +68,7 @@
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text">Álbum 3</h5>
-              <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+              <a href="<?= "edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
               <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
             </div>
         </div>  
@@ -80,7 +80,7 @@
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text">Álbum 4</h5>
-              <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+              <a href="<?= "edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
               <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
             </div>
         </div>  
@@ -90,7 +90,7 @@
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text">Álbum 5</h5>
-              <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+              <a href="<?= "edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
               <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
             </div>
         </div>  
@@ -100,7 +100,7 @@
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text">Álbum 6</h5>
-              <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+              <a href="<?= "edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
               <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
             </div>
         </div>  

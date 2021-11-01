@@ -14,7 +14,7 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky"; ?>">Home</a></li>
-            <li class="breadcrumb-item"><a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.artistas.php"; ?>">Artistas</a></li>
+            <li class="breadcrumb-item"><a href="<?= "lista.musicas.php"; ?>">Músicas</a></li>
             <li class="breadcrumb-item active" aria-current="page">Editar</li>
           </ol>
         </nav>
@@ -27,20 +27,29 @@
     </div>
     <div class="row my-3">
       <div class="col-md-8 mx-0 px-0">
-        <div class="form">
-          <input type="text" class="form-control" placeholder="Nome do artista">
+        <div class="form-check">
+         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+           <label class="form-check-label" for="defaultCheck1">Essa música é um single?</label>
         </div>
+        <br>
+        <div class="form">
+          <input type="text" class="form-control" placeholder="Nome da música">
+        </div>
+        <br>
+        <div class="form-group">
+              <input type="text" id="disabledTextInput" class="form-control" placeholder="Nome do álbum">
+          </div>
         <div>
           <form>
-            <div class="form-group py-5 my-3">
-              <label for="exampleFormControlFile1">Escolha uma foto do artista</label>
-              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            <div class="form-group py-3 my-3">
+              <label for="exampleFormControlFile1">Escolha uma foto do single</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1" disabled>
             </div>
           </form>
         </div>
         <div>
           <button class="btn btn-success btn-lg btn-radius btn-shadow btn-form-2 my-4" data-mdb-ripple-color="dark" href="">Salvar</button>
-            <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.artistas.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow btn-form-2 mx-3 my-4" data-mdb-ripple-color="dark">Voltar</button></a>
+            <a href="<?= "lista.musicas.php"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow btn-form-2 mx-3 my-4" data-mdb-ripple-color="dark">Voltar</button></a>
         </div>
       </div>
         <div class="col-md-4 mx-0 px-0">

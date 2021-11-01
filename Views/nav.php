@@ -8,21 +8,21 @@
     <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
         <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.generos.php"; ?>">Gêneros</a>
+            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/generos/lista.generos.php"; ?>">Gêneros</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.artistas.php"; ?>">Artistas</a>
+            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/artistas/lista.artistas.php"; ?>">Artistas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.albuns.php"; ?>">Álbuns</a>
+            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/albuns/lista.albuns.php"; ?>">Álbuns</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/lista.musicas.php"; ?>">Músicas</a>
+            <a class="nav-link text-light" href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/musicas/lista.musicas.php"; ?>">Músicas</a>
         </li>
         </ul>
     </div>  
     <div>
-    <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/cadastro.confissao.php"; ?>"><button class="btn btn-light btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark">Fazer confissão</button></a>
+    <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/confissoes/cadastro.confissao.php"; ?>"><button class="btn btn-light btn-lg btn-radius btn-shadow" data-mdb-ripple-color="dark">Fazer confissão</button></a>
     </div>
     
 </nav>
