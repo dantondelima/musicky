@@ -5,6 +5,7 @@ spl_autoload_register(function ($class_name) {
 });
 use Db\Persiste;
 $albuns = Persiste::GetAll('Models\Album');
+$artistas = Persiste::GetAll('Models\Artista');
 ?>
 <!-- O grid deve ser incluído em container. -->
 <div class="container-fluid" style="margin-top:20px">
@@ -50,6 +51,17 @@ $albuns = Persiste::GetAll('Models\Album');
                     $album = $album->toArray()
                 ?>
                   <option value="<?= $album['id'] ?>"><?= $album['nome'] ?></option>
+                <?php } ?>
+                </select>
+            </div>
+            <div class="form-group" id="div-album">
+                <select name="artista[]" id="artista" class="form-control" multiple>
+                <option value=""></option>
+                <?php 
+                  foreach($artistas as $artista){
+                    $artista = $artista->toArray()
+                ?>
+                  <option value="<?= $artista['id'] ?>"><?= $artista['nome'] ?></option>
                 <?php } ?>
                 </select>
             </div>

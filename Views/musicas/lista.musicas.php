@@ -1,5 +1,11 @@
 <?php include '../master.php'; ?>
-
+<?php
+spl_autoload_register(function ($class_name) {
+    include '..\..\\'.$class_name . '.php';
+});
+use Db\Persiste;
+$musicas = Persiste::GetAll('Models\Musica');
+?>
 <!-- O grid deve ser incluído em container. -->
 <div class="container-fluid" style="margin-top:20px">
 <div class="row">
@@ -41,80 +47,30 @@
       </div>
     </div>
     <div class= "row my-4">
-      <div class="col-md-4 mx-0">
-        <div class="card-categoria">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
-            <div class="card-body">
-              <h5 class="card-text">Música 1</h5>
-              <div class="row justify-content-center">
-                <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-                <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+      <?php 
+        foreach($musicas as $musica){
+          $musica = $musica->toArray();
+          if($musica['single'] == 2){
+            $imagem = ((Persiste::GetById('Models\Album',$musica['album_id']))->toArray())['capa'];
+            $imagem = "http://".$_SERVER['SERVER_NAME']."/musicky/Imagens/albuns/".$imagem; 
+          }
+          else{
+            $imagem = "http://".$_SERVER['SERVER_NAME']."/musicky/Imagens/musicas/".$musica['imagem'];
+          }
+      ?>
+        <div class="col-md-4 mx-0">
+          <div class="card-categoria">
+            <img src="<?= $imagem ?>" class="card-img-top" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-text"><?= $musica['nome'] ?></h5>
+                <div class="row justify-content-center">
+                  <a href="<?= "edicao.musicas.php?id=".$musica['id']; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+                  <a href="<?= "delete.musicas.php?id=".$musica['id']; ?>" class="btn btn-danger btn-artista my-3 mx-3" onclick="return confirm('Deseja excluir o registro?')">Excluir</a>
+                </div>
               </div>
-            </div>
-        </div>  
-      </div>
-      <div class="col-md-4 mx-0">
-        <div class="card-categoria">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
-            <div class="card-body">
-              <h5 class="card-text">Música 2</h5>
-              <div class="row justify-content-center">
-                <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-                <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
-              </div>
-            </div>
-        </div>  
-      </div>
-      <div class="col-md-4 mx-0">
-        <div class="card-categoria">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
-            <div class="card-body">
-              <h5 class="card-text">Música 3</h5>
-              <div class="row justify-content-center">
-                <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-                <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
-              </div>
-            </div>
-        </div>  
-      </div>
-    </div>
-    <div class= "row my-5">
-      <div class="col-md-4 mx-0">
-        <div class="card-categoria">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
-            <div class="card-body">
-              <h5 class="card-text">Música 4</h5>
-              <div class="row justify-content-center">
-                <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-                <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
-              </div>
-            </div>
-        </div>  
-      </div>
-      <div class="col-md-4 mx-0">
-        <div class="card-categoria">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
-            <div class="card-body">
-              <h5 class="card-text">Música 5</h5>
-              <div class="row justify-content-center">
-                <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-                <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
-              </div>
-            </div>
-        </div>  
-      </div>
-      <div class="col-md-4 mx-0">
-        <div class="card-categoria">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
-            <div class="card-body">
-              <h5 class="card-text">Música 6</h5>
-              <div class="row justify-content-center">
-                <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-                <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
-              </div>
-            </div>
-        </div>  
-      </div>
+          </div>  
+        </div>
+      <?php } ?>
     </div>
     <div class="row my-2">
       <div class="col">

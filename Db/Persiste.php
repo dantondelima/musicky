@@ -65,6 +65,7 @@ class Persiste{
 			}
 			$colunas = substr($colunas,0,-1);   // retira última virgula
 			$parametros = substr($parametros,0,-1);
+			
 			// Prepara o comando SQL
 			$stmt = $pdo->prepare("insert into $tabela ($colunas) values ($parametros)");
 

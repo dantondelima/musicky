@@ -5,12 +5,14 @@ spl_autoload_register(function ($class_name) {
 
 include '../../Helpers.php';
 
+use Db\Persiste;
 use Models\Musica;
 use Models\Artista_musica;
-use Db\Persiste;
 
-if (isset($_POST['nome']))
+
+if (isset($_POST['id']) && isset($_POST['nome']))
 {
+	
 	if(isset($_POST['single'])){
 		$single = 1;
 	}
@@ -26,13 +28,13 @@ if (isset($_POST['nome']))
 		$foto = $filepath;
 	}
 
-	$novaMusica = new Musica(0, $_POST['nome'], $single, $foto, $_POST['album']);
-	$id = Persiste::Add($novaMusica);
+	$musica = new Musica($_POST['id'], $_POST['nome'], $single, $foto, $_POST['album']);
+	Persiste::Update($musica);
+	Persiste::DeleteEspecifico('Models\Artista_musica', $_POST['id'], "musica_id");
 	foreach($_POST['artista'] as $a){
-		$novo = new Artista_musica((int)$a, (int)$id);
+		$novo = new Artista_musica($a, $_POST['id']);
 		Persiste::Add($novo);
 	}
 	header('location: lista.musicas.php');
 }
-
 ?>

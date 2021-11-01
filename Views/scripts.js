@@ -1,5 +1,10 @@
 ﻿$(document).ready(function(){
-    $("#div-imagem").hide();
+    if($('[name="single"]').is(':checked')){
+        $("#div-album").hide();
+    }
+    else{
+        $("#div-imagem, #div-imagem2").hide();
+    }
     $('#album').select2({
         placeholder: "Selecione o álbum",
         allowClear: true,
@@ -23,12 +28,11 @@
     $('[name="single"]').change(function(){
         if ($(this).is(':checked')) {
             $("#div-album").hide();
-            $("#div-imagem").show();
+            $("#div-imagem, #div-imagem2").show();
         }
         else{
             $("#div-album").show();
-            $("#div-imagem").hide();
-
+            $("#div-imagem, #div-imagem2").hide();
         }
     });
 });
