@@ -32,7 +32,7 @@
     <div class="row my-3 justify-content-center">
       <div class="row">
         <div class="col-md-4 mx-0 px-5">
-        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/visualizao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
+        <a href="<?= "Views/confissoes/visualizacao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
@@ -47,7 +47,7 @@
           </div></a>
         </div>
         <div class="col-md-4 mx-0 px-5">
-        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/visualizao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
+        <a href="<?= "Views/confissoes/visualizacao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
@@ -62,7 +62,7 @@
           </div></a>
         </div>
         <div class="col-md-4 mx-0 px-5">
-        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/visualizao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
+        <a href="<?= "Views/confissoes/visualizacao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
@@ -79,7 +79,7 @@
       </div>
       <div class="row">
         <div class="col-md-4 mx-0 px-5">
-        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/visualizao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
+        <a href="<?= "Views/confissoes/visualizacao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
@@ -94,7 +94,7 @@
           </div></a>
         </div>
         <div class="col-md-4 mx-0 px-5">
-        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/visualizao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
+        <a href="<?= "Views/confissoes/visualizacao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título
@@ -109,7 +109,7 @@
           </div></a>
         </div>
         <div class="col-md-4 mx-0 px-5">
-        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Views/subpaginas/visualizao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
+        <a href="<?= "Views/confissoes/visualizacao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
             <div class="card-body">
                   <p class="card-text">
                   Título

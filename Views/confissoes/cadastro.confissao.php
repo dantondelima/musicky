@@ -71,66 +71,74 @@
             </div>
             <div class="row my-3 justify-content-center">
               <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #d4d4d4;" href="#!" role="button"></a>
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffcca7;" href="#!" role="button"></a>
               </div>
               <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffadad;" href="#!" role="button"></a>
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffd6a5;" href="#!" role="button"></a>
               </div>
               <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffbbab;" href="#!" role="button"></a>
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #feebae;" href="#!" role="button"></a>
               </div>
               <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffc2a9;" href="#!" role="button"></a>
-              </div>
-            </div>
-            <div class="row my-3 justify-content-center">
-              <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #d4d4d4;" href="#!" role="button"></a>
-              </div>
-              <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffadad;" href="#!" role="button"></a>
-              </div>
-              <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffbbab;" href="#!" role="button"></a>
-              </div>
-              <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffc2a9;" href="#!" role="button"></a>
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #fdffb6;" href="#!" role="button"></a>
               </div>
             </div>
             <div class="row my-3 justify-content-center">
               <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #d4d4d4;" href="#!" role="button"></a>
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #e4ffbb;" href="#!" role="button"></a>
               </div>
               <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffadad;" href="#!" role="button"></a>
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #caffbf;" href="#!" role="button"></a>
               </div>
               <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffbbab;" href="#!" role="button"></a>
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #b3fbdf;" href="#!" role="button"></a>
               </div>
               <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffc2a9;" href="#!" role="button"></a>
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #9bf6ff;" href="#!" role="button"></a>
+              </div>
+            </div>
+            <div class="row my-3 justify-content-center">
+              <div class="col-3">
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #9eddff;" href="#!" role="button"></a>
+              </div>
+              <div class="col-3">
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #a0c4ff;" href="#!" role="button"></a>
+              </div>
+              <div class="col-3">
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #afbbff;" href="#!" role="button"></a>
+              </div>
+              <div class="col-3">
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #bdb2ff;" href="#!" role="button"></a>
               </div>
             </div>
             <div class="row my-2 justify-content-center">
               <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #d4d4d4;" href="#!" role="button"></a>
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #debcff;" href="#!" role="button"></a>
               </div>
               <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffadad;" href="#!" role="button"></a>
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffc6ff;" href="#!" role="button"></a>
               </div>
               <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffbbab;" href="#!" role="button"></a>
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffe3fe;" href="#!" role="button"></a>
               </div>
               <div class="col-3">
-                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffc2a9;" href="#!" role="button"></a>
+                <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #fffffc;" href="#!" role="button"></a>
               </div>
             </div>
         </div>
       </div>
     </div>
     <div class= "row my-1">
-        <button class="btn btn-success btn-lg btn-radius btn-shadow btn-form-2 btn-form-confissao" data-mdb-ripple-color="dark" href="">Enviar</button>
-        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow btn-form-2 mx-3 btn-form-confissao" data-mdb-ripple-color="dark">Voltar</button></a> 
+      <div>
+        <a href="">    
+          <button class="btn btn-success btn-lg btn-radius btn-shadow btn-form-2 btn-form-confissao" data-mdb-ripple-color="dark" href="">Enviar</button>
+        </a>  
+      </div>
+      <div>
+        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky"; ?>">
+          <button class="btn btn-dark btn-lg btn-radius btn-shadow btn-form-2 mx-3 btn-form-confissao" data-mdb-ripple-color="dark">Voltar</button>
+        </a> 
+      </div>
     </div>  
   </div>
 </div>
