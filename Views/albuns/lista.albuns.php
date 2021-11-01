@@ -1,5 +1,11 @@
 <?php include '../master.php'; ?>
-
+<?php
+spl_autoload_register(function ($class_name) {
+    include '..\..\\'.$class_name . '.php';
+});
+use Db\Persiste;
+$albuns = Persiste::GetAll('Models\Album');
+?>
 <!-- O grid deve ser incluído em container. -->
 <div class="container-fluid" style="margin-top:20px">
 <div class="row">
@@ -41,70 +47,23 @@
       </div>
     </div>
     <div class= "row my-4">
+      <?php 
+        foreach($albuns as $album){
+          $album = $album->toArray()
+      ?>
       <div class="col-md-4 mx-0">
         <div class="card-categoria">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
+          <img src="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Imagens/albuns/".$album['capa']; ?>" class="card-img-top" alt="..."/>
             <div class="card-body">
-              <h5 class="card-text">Álbum 1</h5>
+              <h5 class="card-text"><?= $album['nome'] ?></h5>
               <div class="row justify-content-center">
-                <a href="<?= "edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-                <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+                <a href="<?= "edicao.albuns.php?id=".$album['id']; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+                <a href="<?= "delete.albuns.php?id=".$album['id']; ?>" class="btn btn-danger btn-artista my-3 mx-3" onclick="return confirm('Deseja excluir o registro?')">Excluir</a>
               </div>
             </div>
         </div>  
       </div>
-      <div class="col-md-4 mx-0">
-        <div class="card-categoria">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
-            <div class="card-body">
-              <h5 class="card-text">Álbum 2</h5>
-              <a href="<?= "edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-              <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
-            </div>
-        </div>  
-      </div>
-      <div class="col-md-4 mx-0">
-        <div class="card-categoria">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
-            <div class="card-body">
-              <h5 class="card-text">Álbum 3</h5>
-              <a href="<?= "edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-              <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
-            </div>
-        </div>  
-      </div>
-    </div>
-    <div class= "row my-5">
-      <div class="col-md-4 mx-0">
-        <div class="card-categoria">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
-            <div class="card-body">
-              <h5 class="card-text">Álbum 4</h5>
-              <a href="<?= "edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-              <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
-            </div>
-        </div>  
-      </div>
-      <div class="col-md-4 mx-0">
-        <div class="card-categoria">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
-            <div class="card-body">
-              <h5 class="card-text">Álbum 5</h5>
-              <a href="<?= "edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-              <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
-            </div>
-        </div>  
-      </div>
-      <div class="col-md-4 mx-0">
-        <div class="card-categoria">
-          <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
-            <div class="card-body">
-              <h5 class="card-text">Álbum 6</h5>
-              <a href="<?= "edicao.albuns.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-              <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
-            </div>
-        </div>  
-      </div>
+      <?php } ?>
     </div>
     <div class="row my-2">
       <div class="col">

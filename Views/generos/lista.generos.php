@@ -5,7 +5,6 @@ spl_autoload_register(function ($class_name) {
     include '..\..\\'.$class_name . '.php';
 });
 use Db\Persiste;
-use Models\Genero;
 $generos = Persiste::GetAll('Models\Genero');
 ?>
 <!-- O grid deve ser incluído em container. -->
