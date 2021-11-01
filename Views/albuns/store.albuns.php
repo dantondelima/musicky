@@ -6,6 +6,7 @@ spl_autoload_register(function ($class_name) {
 include '../../Helpers.php';
 
 use Models\Album;
+use Models\Artista_album;
 use Db\Persiste;
 
 
@@ -19,9 +20,12 @@ if (isset($_POST['nome']) && !empty($_FILES['foto']['name']))
 	$foto = $filepath;
 
 	$novoAlbum = new Album(0, $_POST['nome'], $foto);
-	if(Persiste::Add($novoAlbum)){
-		header('location: lista.albuns.php');
+	$id = Persiste::Add($novoAlbum);
+	foreach($_POST['artista'] as $a){
+		$novo = new Artista_album((int)$a, (int)$id);
+		Persiste::Add($novo);
 	}
+	header('location: lista.albuns.php');
 }
 
 ?>

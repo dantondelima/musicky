@@ -7,6 +7,7 @@ include '../../Helpers.php';
 
 use Db\Persiste;
 use Models\Album;
+use Models\Artista_album;
 
 if (isset($_POST['id']) && isset($_POST['nome']))
 {
@@ -21,6 +22,11 @@ if (isset($_POST['id']) && isset($_POST['nome']))
 
 	$album = new Album($_POST['id'], $_POST['nome'], $foto);
 	Persiste::Update($album);
+	Persiste::DeleteEspecifico('Models\Artista_album', $_POST['id'], "album_id");
+	foreach($_POST['artista'] as $a){
+		$novo = new Artista_album($a, $_POST['id']);
+		Persiste::Add($novo);
+	}
 	header('location: lista.albuns.php');
 }
 ?>

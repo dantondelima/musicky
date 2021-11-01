@@ -1,5 +1,11 @@
 <?php include '../master.php'; ?>
-
+<?php
+spl_autoload_register(function ($class_name) {
+    include '..\..\\'.$class_name . '.php';
+});
+use Db\Persiste;
+$artistas = Persiste::GetAll('Models\Artista');
+?>
 <!-- O grid deve ser incluído em container. -->
 <div class="container-fluid" style="margin-top:20px">
 <div class="row">
@@ -32,6 +38,17 @@
             <input type="text" class="form-control" placeholder="Nome do álbum" name="nome">
           </div>
         </div>
+      </div>
+      <div class="form-group">
+        <select name="artista[]" id="artista" class="form-control" multiple>
+        <option value=""></option>
+        <?php 
+          foreach($artistas as $artista){
+            $artista = $artista->toArray()
+        ?>
+          <option value="<?= $artista['id'] ?>"><?= $artista['nome'] ?></option>
+        <?php } ?>
+        </select>
       </div>
       <div class="row my-3">
         <div class="col-md-12 mx-0 px-0">

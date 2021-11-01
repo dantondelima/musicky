@@ -11,7 +11,14 @@ if (!isset($_GET['id']))
   header('location: lista.albuns.php');
 }
 $album = (Persiste::GetById('Models\Album',$_GET['id']))->toArray();
-
+$artistas = Persiste::GetAll('Models\Artista');
+$artistasSelecionados = Persiste::GetSelecionado('Models\Artista_album', $_GET['id'], 'album_id');
+$arts = array();
+if($artistasSelecionados != null)
+  foreach($artistasSelecionados as $artista){
+    $artista = $artista->toArray();
+    array_push($arts, $artista['artista_id']);
+  }
 ?>
 <!-- O grid deve ser incluído em container. -->
 <div class="container-fluid" style="margin-top:20px">
@@ -45,13 +52,23 @@ $album = (Persiste::GetById('Models\Album',$_GET['id']))->toArray();
             <input type="hidden" name="id" value="<?= $album['id'] ?>">
             <input type="text" class="form-control" placeholder="Nome do álbum" name="nome" value="<?= $album['nome'] ?>">
           </div>
+          <br>
           <div>
-            <form>
+            <select name="artista[]" id="artista" class="form-control" multiple>
+              <option value=""></option>
+              <?php 
+                foreach($artistas as $artista){
+                  $artista = $artista->toArray()
+              ?>
+                <option value="<?= $artista['id'] ?>" <?= in_array($artista['id'], $arts)? "selected":"" ?>><?= $artista['nome'] ?></option>
+              <?php } ?>
+            </select>
+          </div>
+          <div>
               <div class="form-group py-5 my-3">
                 <label for="exampleFormControlFile1">Escolha uma capa do álbum</label>
                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="foto">
               </div>
-            </form>
           </div>
           <div>
             <button class="btn btn-success btn-lg btn-radius btn-shadow btn-form-2 my-4" data-mdb-ripple-color="dark" href="">Salvar</button>
