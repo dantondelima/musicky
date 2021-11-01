@@ -58,8 +58,10 @@
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text">Música 2</h5>
-              <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-              <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+              <div class="row justify-content-center">
+                <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+                <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+              </div>
             </div>
         </div>  
       </div>
@@ -68,8 +70,10 @@
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text">Música 3</h5>
-              <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-              <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+              <div class="row justify-content-center">
+                <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+                <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+              </div>
             </div>
         </div>  
       </div>
@@ -80,8 +84,10 @@
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text">Música 4</h5>
-              <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-              <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+              <div class="row justify-content-center">
+                <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+                <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+              </div>
             </div>
         </div>  
       </div>
@@ -90,8 +96,10 @@
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text">Música 5</h5>
-              <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-              <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+              <div class="row justify-content-center">
+                <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+                <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+              </div>
             </div>
         </div>  
       </div>
@@ -100,8 +108,10 @@
           <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text">Música 6</h5>
-              <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
-              <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+              <div class="row justify-content-center">
+                <a href="<?= "edicao.musicas.php"; ?>" class="btn btn-warning btn-artista my-3 mx-3">Editar</a>
+                <a href="#!" class="btn btn-danger btn-artista my-3 mx-3">Excluir</a>
+              </div>
             </div>
         </div>  
       </div>

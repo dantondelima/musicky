@@ -24,8 +24,8 @@
             <h3>Visualizar confissão</h3> 
         </div>
     </div>
-    <div class="row my-4 visualizacao-confissao">
-      <div class="col-md-6 mx-0 px-0">
+    <div class="row my-4 visualizacao-confissao justify-content-center">
+      <div class="col-md-12 mx-0 px-0">
         <div style="width: 25rem; height: 25rem" id="card-capa">
             <div class="card-body">
               <h5 class="card-text">Título</h5>
@@ -40,12 +40,13 @@
             </div>
         </div>
       </div>
-      <div class="col-md-6 mx-0 px-0">
-        <img src="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Assets/Imagens/Disco.png"; ?>" alt="Disco de vinil" class='img-disco-confissao'>
-      </div>
     </div>
     <div class= "row">
-        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky"; ?>"><button class="btn btn-dark btn-lg btn-radius btn-shadow btn-confissao" data-mdb-ripple-color="dark">Voltar</button></a>
+      <div>
+        <a href="<?= "http://".$_SERVER['SERVER_NAME']."/musicky"; ?>" class="btn-link">
+          <button class="btn btn-dark btn-lg btn-radius btn-shadow btn-confissao" data-mdb-ripple-color="dark">Voltar</button>
+        </a>
+      </div>
     </div>  
   </div>
 </div>
