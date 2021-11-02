@@ -1,3 +1,18 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 100418
+ Source Host           : localhost:3306
+ Source Schema         : lp4
+
+ Target Server Type    : MySQL
+ Target Server Version : 100418
+ File Encoding         : 65001
+
+ Date: 02/11/2021 19:33:32
+*/
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
@@ -24,7 +39,7 @@ CREATE TABLE `albums`  (
   `nome` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `capa` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for artista_albums
@@ -69,16 +84,18 @@ CREATE TABLE `artistas`  (
 DROP TABLE IF EXISTS `confissaos`;
 CREATE TABLE `confissaos`  (
   `id` int NOT NULL AUTO_INCREMENT,
-  `descricao` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `cor` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `descricao` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `titulo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `cor` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `album_id` int NULL DEFAULT NULL,
   `musica_id` int NULL DEFAULT NULL,
+  `tipo` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `album_id`(`album_id`) USING BTREE,
-  INDEX `musica_id`(`musica_id`) USING BTREE,
-  CONSTRAINT `album_id` FOREIGN KEY (`album_id`) REFERENCES `albuns` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `musica_id` FOREIGN KEY (`musica_id`) REFERENCES `musicas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+  INDEX `album_confissao`(`album_id`) USING BTREE,
+  INDEX `musica_confissao`(`musica_id`) USING BTREE,
+  CONSTRAINT `album_confissao` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `musica_confissao` FOREIGN KEY (`musica_id`) REFERENCES `musicas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for generos
@@ -103,6 +120,6 @@ CREATE TABLE `musicas`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_album`(`album_id`) USING BTREE,
   CONSTRAINT `id_album` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 SET FOREIGN_KEY_CHECKS = 1;
