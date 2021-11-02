@@ -13,6 +13,7 @@ if (isset($_POST['nome']))
 {
 	if(isset($_POST['single'])){
 		$single = 1;
+		$_POST['album'] = null;
 	}
 	else{
 		$single = 2;
@@ -25,9 +26,9 @@ if (isset($_POST['nome']))
 		move_uploaded_file($_FILES['foto']['tmp_name'], $originalPath.$filepath);
 		$foto = $filepath;
 	}
-
 	$novaMusica = new Musica(0, $_POST['nome'], $single, $foto, $_POST['album']);
 	$id = Persiste::Add($novaMusica);
+	
 	foreach($_POST['artista'] as $a){
 		$novo = new Artista_musica((int)$a, (int)$id);
 		Persiste::Add($novo);
