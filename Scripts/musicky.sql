@@ -1,22 +1,6 @@
-/*
- Navicat Premium Data Transfer
-
- Source Server         : localhost
- Source Server Type    : MySQL
- Source Server Version : 100418
- Source Host           : localhost:3306
- Source Schema         : lp4
-
- Target Server Type    : MySQL
- Target Server Version : 100418
- File Encoding         : 65001
-
- Date: 02/11/2021 19:33:32
-*/
-
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
-
+SET sql_mode = '';
 -- ----------------------------
 -- Table structure for album_generos
 -- ----------------------------
