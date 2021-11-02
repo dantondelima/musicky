@@ -1,5 +1,11 @@
 <?php include 'Views/master.php'; ?>
-
+<?php
+spl_autoload_register(function ($class_name) {
+    include $class_name . '.php';
+});
+use Db\Persiste;
+$confissoes = Persiste::GetAll('Models\Confissao');
+?>
 <!-- O grid deve ser incluído em container. -->
 <div class="container-fluid" style="margin-top:20px">
 <div class="row">
@@ -31,98 +37,48 @@
     </div>
     <div class="row my-3 justify-content-center">
       <div class="row">
-        <div class="col-md-4 mx-0 px-5">
-        <a href="<?= "Views/confissoes/visualizacao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
-            <div class="card-body">
-                  <p class="card-text">
-                  Título
-                  <br>
-                  Música/álbum
-                  </p>
-                  <div>
-                    <img src="https://upload.wikimedia.org/wikipedia/pt/e/ea/5_Seconds_of_Summer_Youngblood.png" alt="" class="img-card-middle img-thumbnail border-thumb">
-                  </div>
-            </div>
-            <img src="Assets\Imagens\sim.png" class="card-img"  alt="..."/>      
-          </div></a>
-        </div>
-        <div class="col-md-4 mx-0 px-5">
-        <a href="<?= "Views/confissoes/visualizacao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
-            <div class="card-body">
-                  <p class="card-text">
-                  Título
-                  <br>
-                  Música/álbum
-                  </p>
-                  <div>
-                    <img src="https://upload.wikimedia.org/wikipedia/pt/e/ea/5_Seconds_of_Summer_Youngblood.png" alt="" class="img-card-middle img-thumbnail border-thumb">
-                  </div>
-            </div>
-            <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
-          </div></a>
-        </div>
-        <div class="col-md-4 mx-0 px-5">
-        <a href="<?= "Views/confissoes/visualizacao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
-            <div class="card-body">
-                  <p class="card-text">
-                  Título
-                  <br>
-                  Música/álbum
-                  </p>
-                  <div>
-                    <img src="https://upload.wikimedia.org/wikipedia/pt/e/ea/5_Seconds_of_Summer_Youngblood.png" alt="" class="img-card-middle img-thumbnail border-thumb">
-                  </div>
-            </div>
-            <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
-          </div></a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 mx-0 px-5">
-        <a href="<?= "Views/confissoes/visualizacao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
-            <div class="card-body">
-                  <p class="card-text">
-                  Título
-                  <br>
-                  Música/álbum
-                  </p>
-                  <div>
-                    <img src="https://upload.wikimedia.org/wikipedia/pt/e/ea/5_Seconds_of_Summer_Youngblood.png" alt="" class="img-card-middle img-thumbnail border-thumb">
-                  </div>
-            </div>
-            <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
-          </div></a>
-        </div>
-        <div class="col-md-4 mx-0 px-5">
-        <a href="<?= "Views/confissoes/visualizacao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
-            <div class="card-body">
-                  <p class="card-text">
-                  Título
-                  <br>
-                  Música/álbum
-                  </p>
-                  <div>
-                    <img src="https://upload.wikimedia.org/wikipedia/pt/e/ea/5_Seconds_of_Summer_Youngblood.png" alt="" class="img-card-middle img-thumbnail border-thumb">
-                  </div>
-            </div>
-            <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
-          </div></a>
-        </div>
-        <div class="col-md-4 mx-0 px-5">
-        <a href="<?= "Views/confissoes/visualizacao.confissao.php"; ?>"><div class="card my-5 card-confissao" style="width: 18rem; height:18rem;">
-            <div class="card-body">
-                  <p class="card-text">
-                  Título
-                  <br>
-                  Música/álbum
-                  </p>
-                  <div>
-                    <img src="https://upload.wikimedia.org/wikipedia/pt/e/ea/5_Seconds_of_Summer_Youngblood.png" alt="" class="img-card-middle img-thumbnail border-thumb">
-                  </div>
-            </div>
-            <img src="Assets\Imagens\sim.png" class="card-img" alt="..."/>      
-          </div></a>
-        </div>
+        <?php
+          foreach($confissoes as $confissao){
+            $confissao = $confissao->toArray();
+        ?>
+          <div class="col-md-4 mx-0 px-5">
+            <a href="<?= "Views/confissoes/visualizacao.confissao.php?id=".$confissao['id'] ?>">
+              <div class="card my-5 card-confissao" style="width: 18rem; height:18rem;border-color: <?= $confissao['cor']; ?>">
+                <div class="card-body">
+                      <p class="card-text">
+                      <?= $confissao['titulo'] ?>
+                      <br>
+                      <?php
+                        if($confissao['tipo'] == 1){
+                          $musica = (Persiste::GetById('Models\Musica',$confissao['musica_id']))->toArray();
+                          if($musica['single'] == 2){
+                            $imagem = ((Persiste::GetById('Models\Album',$musica['album_id']))->toArray())['capa'];
+                            $imagem = "http://".$_SERVER['SERVER_NAME']."/musicky/Imagens/albuns/".$imagem; 
+                          }
+                          else{
+                            $imagem = "http://".$_SERVER['SERVER_NAME']."/musicky/Imagens/musicas/".$musica['imagem'];
+                          }
+                          $titulo = $musica['nome'];
+                        }
+                        else{
+                          $album = ((Persiste::GetById('Models\Album',$confissao['album_id']))->toArray());
+                          $imagem = "http://".$_SERVER['SERVER_NAME']."/musicky/Imagens/albuns/".$album['capa']; 
+                          $titulo = $album['nome'];
+                        }
+                      ?>
+                      <?= $titulo ?>
+                      </p>
+                      <div>
+                        <img src="<?= $imagem ?>" alt="" class="img-card-middle img-thumbnail border-thumb">
+                      </div>
+                </div>
+                <div>
+                  <svg class="card-img" viewBox="0 0 190 59" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M22.698 0.705439C15.4295 2.43696 6.56712 9.36305 3.25168 15.9044C-3.37919 28.987 0.828862 45.725 12.6879 53.6772C20.6577 59.0641 14.2181 58.6794 95 58.6794C162.903 58.6794 166.919 58.6152 170.107 57.525C186.876 51.625 194.718 32.1935 186.748 16.1609C184.644 11.8641 178.332 5.38696 174.252 3.27066C167.621 -0.064126 169.597 4.28319e-06 94.6812 0.0641347C54.9597 0.128265 24.1007 0.384787 22.698 0.705439ZM65.8624 13.5315C66.4362 15.7761 66.3725 47.713 65.7349 48.6109C65.4799 49.1239 64.5235 49.3804 63.6946 49.2522L62.1644 49.0598L61.9732 31.4239C61.9094 21.7402 61.9732 13.4674 62.1644 13.0185C62.6745 11.6076 65.4799 11.9924 65.8624 13.5315ZM96.594 30.7826V49.0598L95.0638 49.2522C94.2349 49.3804 93.2785 49.1239 93.0235 48.6109C92.3859 47.6489 92.2584 14.75 92.8322 13.1467C93.0873 12.5054 93.8524 12.1848 94.9362 12.313L96.594 12.5054V30.7826ZM166.091 30.7826V49.0598H164.178H162.265L162.074 32.0652C162.01 22.7022 162.074 14.4294 162.265 13.5957C162.52 12.4413 162.966 12.1207 164.369 12.313L166.091 12.5054V30.7826ZM135.168 15.3272C135.869 16.7381 135.933 42.9033 135.232 45.5326C134.913 46.687 134.339 47.1359 133.255 47.1359H131.661L131.47 31.4239C131.406 22.8304 131.47 15.3913 131.661 14.9424C132.107 13.6598 134.403 13.9804 135.168 15.3272ZM142.691 14.9424C143.138 15.4554 143.393 21.163 143.456 30.462C143.52 46.1098 143.201 47.8413 140.523 47.3283C139.376 47.1359 139.312 46.3663 139.121 31.4239C139.057 22.7663 139.121 15.3913 139.312 14.9424C139.695 13.8522 141.799 13.8522 142.691 14.9424ZM173.742 30.7826V44.5707L172.211 44.763C171.383 44.8913 170.426 44.6348 170.171 44.1217C169.534 43.1598 169.406 19.2391 169.98 17.6359C170.235 16.9946 171 16.6739 172.084 16.8022L173.742 16.9946V30.7826ZM119.547 30.7826V42.6467H117.953H116.359L116.168 31.4239C116.104 25.2674 116.168 19.8804 116.359 19.3674C116.55 18.9185 117.315 18.5978 118.081 18.7261C119.547 18.9185 119.547 18.9826 119.547 30.7826ZM127.198 30.7826V42.6467H125.604H124.01L123.819 31.4239C123.755 25.2674 123.819 19.8804 124.01 19.3674C124.201 18.9185 124.966 18.5978 125.732 18.7261C127.198 18.9185 127.198 18.9826 127.198 30.7826ZM88.5604 21.4196C89.0705 21.9967 89.2617 25.1391 89.1342 31.1033C88.943 38.5424 88.7517 40.0815 87.8591 40.5946C87.094 41.1076 86.5201 41.0435 85.8188 40.4663C84.9899 39.7609 84.7987 38.0294 84.7987 30.7185C84.7987 22.9587 84.9262 21.8044 85.9463 21.2272C87.4128 20.3294 87.7316 20.3935 88.5604 21.4196ZM103.544 20.9065C105.01 21.4837 105.074 40.0815 103.607 40.6587C100.674 41.7489 99.7819 38.2859 100.228 28.0891C100.483 23.5359 100.802 21.4837 101.44 21.0989C102.523 20.3935 102.332 20.4576 103.544 20.9065ZM19.4463 30.7826C19.4463 38.0935 19.4463 38.1576 17.9161 38.35C17.0873 38.4783 16.1309 38.2217 15.8758 37.7087C15.2383 36.6826 15.1107 24.113 15.7483 23.4717C16.0034 23.2152 16.9597 23.087 17.8524 23.2152L19.4463 23.4076V30.7826ZM27.0973 30.7826V38.1576L25.4396 38.35C23.3356 38.6065 22.953 37.4522 22.953 30.3337C22.953 23.8565 23.2718 22.9587 25.4396 23.2152L27.0973 23.4076V30.7826ZM34.7483 30.7826V38.1576L33.0268 38.35L31.2416 38.5424V30.7826V23.0228L33.0268 23.2152L34.7483 23.4076V30.7826ZM81.292 30.7826V38.1576H79.3792H77.4664L77.2752 31.488C77.2114 27.7685 77.2752 24.3696 77.4664 23.9207C77.6577 23.3435 78.4866 23.087 79.5067 23.2152L81.292 23.4076V30.7826ZM158.44 30.7826V38.1576H156.527H154.614L154.423 31.488C154.359 27.7685 154.423 24.3696 154.614 23.9207C154.805 23.3435 155.634 23.087 156.654 23.2152L158.44 23.4076V30.7826ZM50.0503 30.7826C50.0503 36.1696 50.0503 36.2337 48.4564 36.2337C46.9262 36.2337 46.8624 36.0413 46.6711 31.488C46.4161 25.7804 46.7349 24.8826 48.5839 25.1391C49.9866 25.3315 50.0503 25.588 50.0503 30.7826ZM58.0201 26.2294C58.9128 28.025 58.7852 34.1815 57.8289 35.5283C57.3826 36.1696 56.4262 36.6185 55.7248 36.4261C54.7047 36.2337 54.5134 35.5924 54.3222 31.488C54.1946 28.8587 54.2584 26.3576 54.4497 25.8446C54.9597 24.562 57.255 24.8185 58.0201 26.2294ZM111.896 30.7826C111.896 36.1696 111.896 36.2337 110.302 36.2337C108.772 36.2337 108.708 36.0413 108.517 31.488C108.262 25.7804 108.581 24.8826 110.43 25.1391C111.832 25.3315 111.896 25.588 111.896 30.7826ZM150.342 25.7804C150.789 26.2294 151.107 28.3457 151.107 30.8467C151.107 35.5283 150.215 37.0033 147.919 36.2337C146.772 35.8489 146.644 35.2717 146.644 31.1674C146.644 26.7424 147.282 25.0109 148.876 25.0109C149.258 25.0109 149.896 25.3315 150.342 25.7804ZM11.7953 30.7826C11.7953 33.5402 11.7315 33.6685 9.88255 33.6685C8.16108 33.6685 7.9698 33.412 7.77853 31.5522C7.45973 28.3457 8.03356 27.4478 10.0101 27.7044C11.6678 27.8967 11.7953 28.0891 11.7953 30.7826ZM42.7181 30.7826C42.7181 33.925 42.6544 33.9891 40.8054 33.9891C38.9564 33.9891 38.8926 33.925 38.8926 30.7826C38.8926 27.6402 38.9564 27.5761 40.8054 27.5761C42.6544 27.5761 42.7181 27.6402 42.7181 30.7826ZM73.7047 29.1152C73.896 29.9489 73.9597 31.3598 73.8322 32.1294C73.7047 33.3478 73.2584 33.6685 71.7282 33.6685C70.0067 33.6685 69.8154 33.412 69.6242 31.5522C69.3054 28.538 69.8154 27.5761 71.6644 27.5761C72.8758 27.5761 73.3859 28.025 73.7047 29.1152ZM181.711 30.7826C181.711 33.925 181.648 33.9891 179.799 33.9891C177.95 33.9891 177.886 33.925 177.886 30.7826C177.886 27.6402 177.95 27.5761 179.799 27.5761C181.648 27.5761 181.711 27.6402 181.711 30.7826Z" fill="<?= $confissao['cor'] ?>"/> </svg>
+                </div>  
+              </div>
+            </a>
+          </div>
+        <?php } ?>
       </div>
     </div>
     <div class="row my-2">

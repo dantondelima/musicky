@@ -35,11 +35,11 @@ $musicas = Persiste::GetAll('Models\Musica');
       <div class="row mb-5">
         <div class="col-md-7 mx-0 px-0">
           <div class="form">
-            <input type="text" class="form-control" placeholder="Título">
+            <input type="text" class="form-control" placeholder="Título" name="titulo">
             <br>
             <div class="form-group">
               <label for="exampleFormControlSelect1">Selecione abaixo o tipo de confissão desejada:</label>
-                <select class="form-control" id="tipo" searchable="Pesquise aqui..">
+                <select class="form-control" id="tipo" searchable="Pesquise aqui.." name="tipo">
                   <option value="1" selected>Confissão sobre música</option>
                   <option value="2">Confissão sobre álbum</option>
                 </select>

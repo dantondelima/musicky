@@ -42,11 +42,16 @@ img {
   margin-bottom: 8px;
 }
 .card {
-  border-color: black;
+  /* border-color: black; */
   border-radius: 10%;
   border-width: 3px;
 }
 .card-img {
+  /* background: url('../Imagens/sim.png');
+  background-color: rgb(49, 121, 184);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 70%; */
   width: 200px;
   height: 45px;
   display: block;

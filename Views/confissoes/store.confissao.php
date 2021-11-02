@@ -8,17 +8,19 @@ include '../../Helpers.php';
 use Models\Confissao;
 use Db\Persiste;
 
-if (isset($_POST['nome']))
+if (isset($_POST['titulo']))
 {
-	$original= $_FILES['foto'];
-	$originalPath = $GLOBALS['upload_dir'].DIRECTORY_SEPARATOR."Imagens".DIRECTORY_SEPARATOR."artistas".DIRECTORY_SEPARATOR;
-	$filepath = date('YmdHis').$_FILES['foto']['name'];
-	move_uploaded_file($_FILES['foto']['tmp_name'], $originalPath.$filepath);
-	$foto = $filepath;
-
-	$novoArtista = new Artista(0, $_POST['nome'], $foto);
-	if(Persiste::Add($novoArtista)){
-		header('location: lista.artistas.php');
+	if($_POST['tipo'] == 1){
+		$musica = $_POST['musica'];
+		$album = null;
+	}
+	else{
+		$album = $_POST['album'];
+		$musica = null;
+	}
+	$novaConfissao = new Confissao(0, $_POST['descricao'], $_POST['titulo'], $_POST['cor'], $_POST['tipo'], $album, $musica);
+	if(Persiste::Add($novaConfissao)){
+		header('location: ../../index.php');
 	}
 }
 

@@ -6,17 +6,21 @@ namespace Models; // agrupamento de classes (caminho)
 class Confissao implements Idados{
     // Propriedades
 	protected $id;
+	protected $titulo;
 	protected $descricao;
 	protected $cor;
+	protected $tipo;
 	protected $album_id;
 	protected $musica_id;
 	// obs.: propriedades protected são acessíveis por subclasses (extend)
 
 	// Método construtor.
-	public function __construct($id, $descricao, $cor, $album_id, $musica_id){
+	public function __construct($id, $descricao, $titulo, $cor, $tipo, $album_id, $musica_id){
 		$this->id = $id;
+		$this->titulo = $titulo;
 		$this->descricao = $descricao;
 		$this->cor = $cor;
+		$this->tipo = $tipo;
 		$this->album_id = $album_id;
 		$this->musica_id = $musica_id;
 	}
@@ -34,7 +38,7 @@ class Confissao implements Idados{
 
 	// Método que retorna vetor associativo contendo os valores das propriedades
 	public function toArray() {
-		return ['id' => $this->id ,'descricao'=>$this->descricao,'cor'=>$this->cor,'album_id'=>$this->album_id, 'musica_id'=>$this->musica_id];
+		return ['id' => $this->id ,'descricao'=>$this->descricao,'titulo'=>$this->titulo,'cor'=>$this->cor,'tipo'=>$this->tipo,'album_id'=>$this->album_id, 'musica_id'=>$this->musica_id];
 	}
 
     // Inclui o conteúdo do Trait

@@ -1,5 +1,18 @@
 <?php include '../master.php'; ?>
+<?php
+spl_autoload_register(function ($class_name) {
+    include '..\..\\'.$class_name . '.php';
+});
 
+use Db\Persiste;
+
+if (!isset($_GET['id']))
+{
+  header('location: ../../index.php');
+}
+$confissao = (Persiste::GetById('Models\Confissao',$_GET['id']))->toArray();
+
+?>
 <!-- O grid deve ser incluído em container. -->
 <div class="container-fluid" style="margin-top:20px">
 <div class="row">
@@ -28,14 +41,20 @@
       <div class="col-md-12 mx-0 px-0">
         <div style="width: 25rem; height: 25rem" id="card-capa">
             <div class="card-body">
-              <h5 class="card-text">Título</h5>
-              <h6 class="card-text">Nome do álbum/música</h6>
+              <h5 class="card-text"><?= $confissao['titulo'] ?></h5>
+              <?php
+                if($confissao['tipo'] == 1){
+                  $musica = (Persiste::GetById('Models\Musica',$confissao['musica_id']))->toArray();
+                  $titulo = $musica['nome'];
+                }
+                else{
+                  $album = ((Persiste::GetById('Models\Album',$confissao['album_id']))->toArray());
+                  $titulo = $album['nome'];
+                }
+              ?>
+              <h6 class="card-text"><?= $titulo ?></h6>
               <p class="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dictum, tortor sagittis placerat porta, magna justo luctus quam, 
-              feugiat tincidunt justo eros quis nulla. Nulla lacinia tristique enim, sed posuere sapien porttitor vitae. Etiam a lacus blandit, 
-              aliquet ligula tincidunt, aliquet arcu. Vivamus sed lacus ex. Praesent pretium erat vel augue vulputate luctus a sit amet ipsum.
-              Sed gravida, erat fermentum interdum bibendum, elit odio varius nisl, ac pellentesque risus quam id lorem. Nulla hendrerit erat ligula,
-               sit amet venenatis arcu interdum ut.
+              <?= nl2br($confissao['descricao']) ?>
               </p>
             </div>
         </div>
