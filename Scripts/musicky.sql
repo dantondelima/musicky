@@ -1,109 +1,199 @@
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
-SET sql_mode = '';
--- ----------------------------
--- Table structure for album_generos
--- ----------------------------
-DROP TABLE IF EXISTS `album_generos`;
-CREATE TABLE `album_generos`  (
-  `album_id` int NOT NULL,
-  `genero_id` int NOT NULL,
-  INDEX `album_genero_id`(`album_id`) USING BTREE,
-  INDEX `genero_album_id`(`genero_id`) USING BTREE,
-  CONSTRAINT `album_genero_id` FOREIGN KEY (`album_id`) REFERENCES `albuns` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `genero_album_id` FOREIGN KEY (`genero_id`) REFERENCES `generos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
--- ----------------------------
--- Table structure for albums
--- ----------------------------
-DROP TABLE IF EXISTS `albums`;
-CREATE TABLE `albums`  (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `capa` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
--- ----------------------------
--- Table structure for artista_albums
--- ----------------------------
-DROP TABLE IF EXISTS `artista_albums`;
-CREATE TABLE `artista_albums`  (
-  `artista_id` int NOT NULL,
-  `album_id` int NOT NULL,
-  INDEX `artista_album_id`(`artista_id`) USING BTREE,
-  INDEX `album_artista_id`(`album_id`) USING BTREE,
-  CONSTRAINT `album_artista_id` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `artista_album_id` FOREIGN KEY (`artista_id`) REFERENCES `artistas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+-- --------------------------------------------------------
+--
+-- Estrutura da tabela `albums`
+--
 
--- ----------------------------
--- Table structure for artista_musicas
--- ----------------------------
-DROP TABLE IF EXISTS `artista_musicas`;
-CREATE TABLE `artista_musicas`  (
-  `artista_id` int NOT NULL,
-  `musica_id` int NOT NULL,
-  INDEX `artista_musica_id`(`artista_id`) USING BTREE,
-  INDEX `musica_artista_id`(`musica_id`) USING BTREE,
-  CONSTRAINT `artista_musica_id` FOREIGN KEY (`artista_id`) REFERENCES `artistas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `musica_artista_id` FOREIGN KEY (`musica_id`) REFERENCES `musicas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+CREATE TABLE `albums` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `capa` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ----------------------------
--- Table structure for artistas
--- ----------------------------
-DROP TABLE IF EXISTS `artistas`;
-CREATE TABLE `artistas`  (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `foto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+-- --------------------------------------------------------
 
--- ----------------------------
--- Table structure for confissaos
--- ----------------------------
-DROP TABLE IF EXISTS `confissaos`;
-CREATE TABLE `confissaos`  (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `descricao` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `titulo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `cor` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `album_id` int NULL DEFAULT NULL,
-  `musica_id` int NULL DEFAULT NULL,
-  `tipo` int NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `album_confissao`(`album_id`) USING BTREE,
-  INDEX `musica_confissao`(`musica_id`) USING BTREE,
-  CONSTRAINT `album_confissao` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `musica_confissao` FOREIGN KEY (`musica_id`) REFERENCES `musicas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+--
+-- Estrutura da tabela `album_generos`
+--
 
--- ----------------------------
--- Table structure for generos
--- ----------------------------
-DROP TABLE IF EXISTS `generos`;
-CREATE TABLE `generos`  (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+CREATE TABLE `album_generos` (
+  `album_id` int(11) NOT NULL,
+  `genero_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ----------------------------
--- Table structure for musicas
--- ----------------------------
-DROP TABLE IF EXISTS `musicas`;
-CREATE TABLE `musicas`  (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `artistas`
+--
+
+CREATE TABLE `artistas` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `foto` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `artista_albums`
+--
+
+CREATE TABLE `artista_albums` (
+  `artista_id` int(11) NOT NULL,
+  `album_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `artista_musicas`
+--
+
+CREATE TABLE `artista_musicas` (
+  `artista_id` int(11) NOT NULL,
+  `musica_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `confissaos`
+--
+
+CREATE TABLE `confissaos` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `descricao` text NOT NULL,
+  `cor` varchar(50) NOT NULL,
+  `album_id` int(11) NOT NULL,
+  `musica_id` int(11) NOT NULL,
+  `tipo` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `generos`
+--
+
+CREATE TABLE `generos` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `musicas`
+--
+
+CREATE TABLE `musicas` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
   `single` tinyint(1) NOT NULL,
-  `imagem` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `album_id` int NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `id_album`(`album_id`) USING BTREE,
-  CONSTRAINT `id_album` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+  `imagem` varchar(255) NOT NULL,
+  `album_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-SET FOREIGN_KEY_CHECKS = 1;
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `albums`
+--
+ALTER TABLE `albums`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `album_generos`
+--
+ALTER TABLE `album_generos`
+  ADD KEY `album_genero_id` (`album_id`),
+  ADD KEY `genero_album_id` (`genero_id`);
+
+--
+-- Índices para tabela `artistas`
+--
+ALTER TABLE `artistas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `artista_albums`
+--
+ALTER TABLE `artista_albums`
+  ADD KEY `artista_album_id` (`artista_id`),
+  ADD KEY `album_artista_id` (`album_id`);
+
+--
+-- Índices para tabela `artista_musicas`
+--
+ALTER TABLE `artista_musicas`
+  ADD KEY `artista_musica_id` (`artista_id`),
+  ADD KEY `musica_artista_id` (`musica_id`);
+
+--
+-- Índices para tabela `confissaos`
+--
+ALTER TABLE `confissaos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_album` (`album_id`),
+  ADD KEY `id_musica` (`musica_id`);
+
+--
+-- Índices para tabela `generos`
+--
+ALTER TABLE `generos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `musicas`
+--
+ALTER TABLE `musicas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `album_id` (`album_id`);
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `album_generos`
+--
+ALTER TABLE `album_generos`
+  ADD CONSTRAINT `album_genero_id` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `genero_album_id` FOREIGN KEY (`genero_id`) REFERENCES `albums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limitadores para a tabela `artista_albums`
+--
+ALTER TABLE `artista_albums`
+  ADD CONSTRAINT `album_artista_id` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `artista_album_id` FOREIGN KEY (`artista_id`) REFERENCES `artistas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limitadores para a tabela `artista_musicas`
+--
+ALTER TABLE `artista_musicas`
+  ADD CONSTRAINT `artista_musica_id` FOREIGN KEY (`artista_id`) REFERENCES `artistas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `musica_artista_id` FOREIGN KEY (`musica_id`) REFERENCES `musicas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limitadores para a tabela `confissaos`
+--
+ALTER TABLE `confissaos`
+  ADD CONSTRAINT `id_album` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `id_musica` FOREIGN KEY (`musica_id`) REFERENCES `musicas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limitadores para a tabela `musicas`
+--
+ALTER TABLE `musicas`
+  ADD CONSTRAINT `album_id` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
