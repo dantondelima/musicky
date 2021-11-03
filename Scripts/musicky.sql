@@ -4,12 +4,13 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
+
 --
 -- Estrutura da tabela `albums`
 --
 
 CREATE TABLE `albums` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `capa` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -32,7 +33,7 @@ CREATE TABLE `album_generos` (
 --
 
 CREATE TABLE `artistas` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -66,7 +67,7 @@ CREATE TABLE `artista_musicas` (
 --
 
 CREATE TABLE `confissaos` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(255) NOT NULL,
   `descricao` text NOT NULL,
   `cor` varchar(50) NOT NULL,
@@ -82,7 +83,7 @@ CREATE TABLE `confissaos` (
 --
 
 CREATE TABLE `generos` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -93,7 +94,7 @@ CREATE TABLE `generos` (
 --
 
 CREATE TABLE `musicas` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `single` tinyint(1) NOT NULL,
   `imagem` varchar(255) NOT NULL,
