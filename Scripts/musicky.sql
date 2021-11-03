@@ -12,7 +12,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `albums` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
-  `capa` varchar(255) NOT NULL
+  `capa` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -35,7 +36,8 @@ CREATE TABLE `album_generos` (
 CREATE TABLE `artistas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
-  `foto` varchar(255) NOT NULL
+  `foto` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -73,7 +75,8 @@ CREATE TABLE `confissaos` (
   `cor` varchar(50) NOT NULL,
   `album_id` int(11) NOT NULL,
   `musica_id` int(11) NOT NULL,
-  `tipo` tinyint(4) NOT NULL
+  `tipo` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -84,7 +87,8 @@ CREATE TABLE `confissaos` (
 
 CREATE TABLE `generos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) NOT NULL
+  `nome` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -98,18 +102,14 @@ CREATE TABLE `musicas` (
   `nome` varchar(255) NOT NULL,
   `single` tinyint(1) NOT NULL,
   `imagem` varchar(255) NOT NULL,
-  `album_id` int(11) NOT NULL
+  `album_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tabelas despejadas
 --
 
---
--- Índices para tabela `albums`
---
-ALTER TABLE `albums`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `album_generos`
@@ -117,12 +117,6 @@ ALTER TABLE `albums`
 ALTER TABLE `album_generos`
   ADD KEY `album_genero_id` (`album_id`),
   ADD KEY `genero_album_id` (`genero_id`);
-
---
--- Índices para tabela `artistas`
---
-ALTER TABLE `artistas`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `artista_albums`
@@ -142,21 +136,14 @@ ALTER TABLE `artista_musicas`
 -- Índices para tabela `confissaos`
 --
 ALTER TABLE `confissaos`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `id_album` (`album_id`),
   ADD KEY `id_musica` (`musica_id`);
 
---
--- Índices para tabela `generos`
---
-ALTER TABLE `generos`
-  ADD PRIMARY KEY (`id`);
-
+-
 --
 -- Índices para tabela `musicas`
 --
 ALTER TABLE `musicas`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `album_id` (`album_id`);
 
 --
