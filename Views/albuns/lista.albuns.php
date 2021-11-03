@@ -7,7 +7,7 @@ use Db\Persiste;
 $albuns = Persiste::GetAll('Models\Album');
 ?>
 <!-- O grid deve ser incluído em container. -->
-<div class="container-fluid" style="margin-top:20px">
+<div class="container-fluid geral" style="margin-top:20px">
 <div class="row">
   <div class="col-md-10 mx-auto">
     <div class="row">
@@ -52,7 +52,7 @@ $albuns = Persiste::GetAll('Models\Album');
           $album = $album->toArray()
       ?>
       <div class="col-md-4 mx-0">
-        <div class="card-categoria">
+        <div class="card-categoria my-3">
           <img src="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Imagens/albuns/".$album['capa']; ?>" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text"><?= $album['nome'] ?></h5>

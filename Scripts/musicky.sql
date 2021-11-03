@@ -139,7 +139,7 @@ ALTER TABLE `confissaos`
   ADD KEY `id_album` (`album_id`),
   ADD KEY `id_musica` (`musica_id`);
 
--
+--
 --
 -- Índices para tabela `musicas`
 --

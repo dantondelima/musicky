@@ -1,3 +1,3 @@
 ﻿<?php
 
-$GLOBALS['upload_dir'] = 'C:\xampp\htdocs\musicky';
+$GLOBALS['upload_dir'] = 'C:\xampp-2\htdocs\musicky';

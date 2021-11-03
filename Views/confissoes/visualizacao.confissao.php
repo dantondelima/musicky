@@ -14,7 +14,7 @@ $confissao = (Persiste::GetById('Models\Confissao',$_GET['id']))->toArray();
 
 ?>
 <!-- O grid deve ser incluído em container. -->
-<div class="container-fluid" style="margin-top:20px">
+<div class="container-fluid geral" style="margin-top:20px">
 <div class="row">
   <div class="col-md-10 mx-auto">
     <div class="row">
@@ -39,7 +39,7 @@ $confissao = (Persiste::GetById('Models\Confissao',$_GET['id']))->toArray();
     </div>
     <div class="row my-4 visualizacao-confissao justify-content-center">
       <div class="col-md-12 mx-0 px-0">
-        <div style="width: 25rem; height: 25rem" id="card-capa">
+        <div style="border-color: <?= $confissao['cor']; ?>" id="card-capa">
             <div class="card-body">
               <h5 class="card-text"><?= $confissao['titulo'] ?></h5>
               <?php

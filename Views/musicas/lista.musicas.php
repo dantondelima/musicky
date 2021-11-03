@@ -7,7 +7,7 @@ use Db\Persiste;
 $musicas = Persiste::GetAll('Models\Musica');
 ?>
 <!-- O grid deve ser incluído em container. -->
-<div class="container-fluid" style="margin-top:20px">
+<div class="container-fluid geral" style="margin-top:20px">
 <div class="row">
   <div class="col-md-10 mx-auto">
     <div class="row">
@@ -59,7 +59,7 @@ $musicas = Persiste::GetAll('Models\Musica');
           }
       ?>
         <div class="col-md-4 mx-0">
-          <div class="card-categoria">
+          <div class="card-categoria my-3">
             <img src="<?= $imagem ?>" class="card-img-top" alt="..."/>
               <div class="card-body">
                 <h5 class="card-text"><?= $musica['nome'] ?></h5>
