@@ -1,5 +1,4 @@
 <?php include '../master.php'; ?>
-
 <!-- O grid deve ser incluído em container. -->
 <div class="container-fluid" style="margin-top:20px">
 <div class="row">

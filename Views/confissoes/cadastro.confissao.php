@@ -8,7 +8,7 @@ $albuns = Persiste::GetAll('Models\Album');
 $musicas = Persiste::GetAll('Models\Musica');
 ?>
 <!-- O grid deve ser incluído em container. -->
-<div class="container-fluid" style="margin-top:20px">
+<div class="container-fluid geral" style="margin-top:20px">
 <div class="row">
   <div class="col-md-10 mx-auto">
     <div class="row">

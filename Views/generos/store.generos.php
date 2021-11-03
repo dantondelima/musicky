@@ -5,12 +5,10 @@ spl_autoload_register(function ($class_name) {
 use Models\Genero;
 use Db\Persiste;
 
-if (isset($_POST['nome']))
-{
+
 	$novoGenero = new Genero(0, $_POST['nome']);
-	if(Persiste::Add($novoGenero)){
+	Persiste::Add($novoGenero);
 		header('location: lista.generos.php');
-	}
-}
+	
 
 ?>
