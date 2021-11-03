@@ -172,3 +172,7 @@ html, body {height:100%;}
   min-height: 240px;
   max-height: 240px;
 }
+
+.page-link {
+  color: black;
+}
