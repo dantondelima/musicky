@@ -4,7 +4,12 @@ spl_autoload_register(function ($class_name) {
     include '..\..\\'.$class_name . '.php';
 });
 use Db\Persiste;
-$musicas = Persiste::GetAll('Models\Musica');
+if(!isset($_GET['pagina'])){
+  $_GET['pagina'] = 1;
+}
+$qtd = count(Persiste::GetAll('Models\Musica'));
+$qtdPagina = 6;
+$musicas = Persiste::GetPaginate('Models\Musica', $_GET['pagina'], $qtdPagina);
 ?>
 <!-- O grid deve ser incluído em container. -->
 <div class="container-fluid" style="margin-top:20px">
@@ -72,29 +77,11 @@ $musicas = Persiste::GetAll('Models\Musica');
         </div>
       <?php } ?>
     </div>
-    <div class="row my-2">
-      <div class="col">
-        <nav aria-label="Navegação de página exemplo">
-          <ul class="pagination justify-content-center">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Anterior">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Anterior</span>
-              </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Próximo">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Próximo</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>  
+    <?php 
+     if($qtd > $qtdPagina){
+        include "../paginacao.php";
+     }
+    ?>
   </div>
 </div>
 <?php include '../rodape.php'; ?>

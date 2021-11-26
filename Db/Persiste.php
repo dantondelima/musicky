@@ -152,6 +152,75 @@ class Persiste{
 		return $retorno;
 	}
 
+	public static function GetPaginate($nomeclasse, $inicioPagina = 1, $tamanhoPagina = 6)
+	{
+		try {
+			// Cria objeto PDO
+			$pdo = new PDO(hostDb,usuario,senha);
+
+			// Configura o comportamento no caso de erros: levanta exceção.
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+			// Não emula comandos preparados, usa nativo do driver do banco
+			$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+
+			// ReflectionClass usada para inspecionar a classe
+			// obtendo suas propriedades, métodos, constantes, etc.
+			$rf = new ReflectionClass($nomeclasse);
+
+			// Nome da tabela é igual ao nome da classe no plural minúsculas
+			$aux = explode("\\",$nomeclasse);
+			$tabela = array_pop($aux);
+			$tabela = strtolower($tabela.'s');
+
+			// Gera lista de colunas, lista de parâmetros e vetor com os dados
+			// para preparar o comando e executá-lo.
+			$colunas = "";
+			foreach($rf->getProperties() as $p)
+			{
+				$colunas = $colunas.$p->name.',';
+			}
+			$colunas = substr($colunas,0,-1);   // retira última virgula
+			
+			$stmt = $pdo->prepare("select $colunas from $tabela order by id LIMIT :limit OFFSET :offset");
+			if($inicioPagina == 1){
+				$inicioPagina = 0;
+			}
+			else{
+				$inicioPagina = ($tamanhoPagina * ($inicioPagina - 1));
+			}
+			// Executa comando SQL
+			$stmt->execute([':limit'=>$tamanhoPagina, ':offset' => $inicioPagina]);
+
+			// Resultado na forma de vetor associativo
+			$stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+			$retorno = []; // vetor vazio
+			$linha = $stmt->fetch();
+			while ($linha != null)
+			{
+				$obj = $rf->newInstanceWithoutConstructor();
+				foreach($linha as $i=>$v)
+				{
+					$obj->{'set'.$i} = $v;
+				}
+				array_push($retorno,$obj);
+				$linha = $stmt->fetch();
+			}
+
+		// Desvia para catch no caso de erros.	
+		} catch (PDOException $pex) {
+			//poder ser usado "$pex->getMessage();" ou "$pex->getCode();" para se obter detalhes sobre o erro.
+			$retorno = null;
+
+		// Sempre executa o bloco finally, tendo ocorrido ou não erros no bloco TRY	
+		} finally {
+			$pdo=null;
+		}
+
+		return $retorno;
+	}
+
 	public static function GetById($nomeclasse,$id)
 	{
 		try {

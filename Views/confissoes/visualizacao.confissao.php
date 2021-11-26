@@ -39,7 +39,7 @@ $confissao = (Persiste::GetById('Models\Confissao',$_GET['id']))->toArray();
     </div>
     <div class="row my-4 visualizacao-confissao justify-content-center">
       <div class="col-md-12 mx-0 px-0">
-        <div style="width: 25rem; height: 25rem" id="card-capa">
+        <div style="width: 25rem; height: 25rem; border-color: <?= $confissao['cor'] ?> " id="card-capa">
             <div class="card-body">
               <h5 class="card-text"><?= $confissao['titulo'] ?></h5>
               <?php
