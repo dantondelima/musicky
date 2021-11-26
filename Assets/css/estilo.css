@@ -32,8 +32,17 @@ img {
 .breadcrumb {
   background-color: none;
 }
+
+html, body {height:100%;}
+
+.geral {
+  min-height:100%;
+  position:relative;
+}
+
 #rodape {
-  position: static;
+  width: 100%;
+  position: absolute;
   bottom: 0 !important;
 }
 
@@ -92,7 +101,7 @@ img {
 
 .btn-confissao {
   width: 7rem;
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
   margin-top: 1rem;
 }
 .btn-cores {
@@ -124,8 +133,8 @@ img {
 }
 
 .img-artista {
-  width: 250px;
-  height: 350px;
+  width: 320px;
+  height: 240px;
   margin-left: 75px;
   margin-right: 75px;
 }
@@ -147,12 +156,23 @@ img {
 }
 
 .btn-form-confissao {
-  margin-top: -30px;
+  margin-top: -90px;
 }
 
 #card-capa {
-  border: solid #ffadad 4px;
+  width: 25rem; height: 25rem; 
+  border: solid 4px;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   margin: 0 auto;
+}
+
+.card-img-top {
+  min-width: 320px;
+  min-height: 240px;
+  max-height: 240px;
+}
+
+.page-link {
+  color: black;
 }

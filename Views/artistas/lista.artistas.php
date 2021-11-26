@@ -12,7 +12,7 @@ $qtdPagina = 6;
 $artistas = Persiste::GetPaginate('Models\Artista', $_GET['pagina'], $qtdPagina);
 ?>
 <!-- O grid deve ser incluído em container. -->
-<div class="container-fluid" style="margin-top:20px">
+<div class="container-fluid geral" style="margin-top:20px">
 <div class="row">
   <div class="col-md-10 mx-auto">
     <div class="row">
@@ -57,7 +57,7 @@ $artistas = Persiste::GetPaginate('Models\Artista', $_GET['pagina'], $qtdPagina)
           $artista = $artista->toArray()
       ?>
       <div class="col-md-4 mx-0">
-        <div class="card-categoria">
+        <div class="card-categoria my-3">
           <img src="<?= "http://".$_SERVER['SERVER_NAME']."/musicky/Imagens/artistas/".$artista['foto']; ?>" class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-text"><?= $artista['nome'] ?></h5>

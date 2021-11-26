@@ -8,7 +8,7 @@ $albuns = Persiste::GetAll('Models\Album');
 $musicas = Persiste::GetAll('Models\Musica');
 ?>
 <!-- O grid deve ser incluído em container. -->
-<div class="container-fluid" style="margin-top:20px">
+<div class="container-fluid geral" style="margin-top:20px">
 <div class="row">
   <div class="col-md-10 mx-auto">
     <div class="row">
@@ -96,15 +96,15 @@ $musicas = Persiste::GetAll('Models\Musica');
                   <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffd6a5;" name="color" role="button"></a>
                 </div>
                 <div class="col-3">
-                  <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #feebae;" name="color" role="button"></a>
+                  <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #f5ae61;" name="color" role="button"></a>
                 </div>
                 <div class="col-3">
-                  <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #fdffb6;" name="color" role="button"></a>
+                  <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #f5d261;" name="color" role="button"></a>
                 </div>
               </div>
               <div class="row my-3 justify-content-center">
                 <div class="col-3">
-                  <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #e4ffbb;" name="color" role="button"></a>
+                  <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #bfff5e;" name="color" role="button"></a>
                 </div>
                 <div class="col-3">
                   <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #caffbf;" name="color" role="button"></a>
@@ -138,10 +138,10 @@ $musicas = Persiste::GetAll('Models\Musica');
                   <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffc6ff;" name="color" role="button"></a>
                 </div>
                 <div class="col-3">
-                  <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ffe3fe;" name="color" role="button"></a>
+                  <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #ebade9;" name="color" role="button"></a>
                 </div>
                 <div class="col-3">
-                  <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #fffffc;" name="color" role="button"></a>
+                  <a class="btn btn-cores mx-3 border-dark btn-shadow" style="background-color: #161616;" name="color" role="button"></a>
                 </div>
               </div>
           </div>

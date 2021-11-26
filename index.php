@@ -12,7 +12,7 @@ $qtdPagina = 6;
 $confissoes = Persiste::GetPaginate('Models\Confissao', $_GET['pagina'], $qtdPagina);
 ?>
 <!-- O grid deve ser incluído em container. -->
-<div class="container-fluid" style="margin-top:20px">
+<div class="container-fluid geral" style="margin-top:20px">
 <div class="row">
   <div class="col-md-10 mx-auto">
     <div class="row">
